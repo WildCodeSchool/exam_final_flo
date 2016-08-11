@@ -36,7 +36,13 @@
             </nav>
         {% endblock %}
 
-        {% block body %}{% endblock %}
+        {% if tps_restant <= 0 %}
+            <div>
+                <h1>Le temps est écoulé</h1>
+            </div>
+        {% else %}
+            {% block body %}{% endblock %}
+        {% endif %}
 
         {% block footer %}
             <footer class="page-footer">
