@@ -1,0 +1,245 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="algo container">
+        <div class="row>">
+            <h1>Algorithmique</h1>
+            <p>Bienvenue sur le test d'algorithmique</p>
+            <p>Ci dessous trois sujets d'algo, du plus facile au plus difficile.</p>
+            <p>Ouvre le projet avec PHP Storm et rend toi dans le controlleur "AlgoController", c'est ici que tu devras travailler.</p>
+            <p>Tu n'as normalement rien à modifier dans les autres fichiers pour cette étapes</p>
+            <p>Si ton algo est bon, le bouton passe au vert.</p>
+            <p>Bon courage</p>
+        </div>
+
+        <div class="row">
+            <div class="col m6 exo">
+                <div class="row ennoncé">
+                    <h3>Exercide 1</h3>
+                    <p>Considérez le tableau suivant, écrire une fonction qui renvéra dans un tableau le nombre max et le nombre min présent dans le tableau.</p>
+                    <p>Ex: le tableau [1, 2, 3, 4, 5] passé en paramètre de la fonction renverra [1, 5]</p>
+                </div>
+                <div class="row">
+                    <div class="col m6">
+                        <h5>Tableau reçu</h5>
+                        <ul>
+                            {% for int in tab %}
+                                <li>{{ int }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col m6">
+                        <h5>Résultat</h5>
+                        <table class="centered">
+                            <thead>
+                            <tr>
+                                <th>Min</th>
+                                <th>max</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                {% for int in min_max %}
+                                    <td>{{ int }}</td>
+                                {% endfor %}
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    {% if min_max == [min(tab), max(tab)] %}
+                        <p class="true waves-effect waves-light btn">TRUE</p>
+                    {% else %}
+                        <p class="false waves-effect waves-light btn">FALSE</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col m6 exo">
+                <div class="row ennoncé">
+                    <h3>Exercice 2</h3>
+                    <p>Considérez le tableau suivant, écrire une fonction qui renvéra dans un tableau la somme des entiers positifs ainsi que la somme des entiers négatifs.</p>
+                    <p>Ex: le tableau [1, 2, 3, 4, 5, -2, -3, -5] passé en paramètre de la fonction renverra [15, -10]</p>
+                </div>
+                <div class="row">
+                    <div class="col m6">
+                        <h5>Tableau reçu</h5>
+                        <ul>
+                            {% for int in tab %}
+                                <li>{{ int }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col m6">
+                        <h5>Résultat</h5>
+                        <table class="centered">
+                            <thead>
+                                <tr>
+                                    <th>Sum pos</th>
+                                    <th>Sum neg</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {% for int in sum_of_min_max %}
+                                        <td>{{ int }}</td>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    {% if sum_of_min_max == sum %}
+                        <p class="true waves-effect waves-light btn">TRUE</p>
+                    {% else %}
+                        <p class="false waves-effect waves-light btn">FALSE</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="exo col m12">
+                <div class="row">
+                    <h3>Exercide 3</h3>
+                    <div class="col m12">
+                        <h5>Roman to Numerals</h5>
+                        <p>Write a function to convert from normal numbers to Roman Numerals: e.g.</p>
+                        <p>The Romans were a clever bunch. They conquered most of Europe and ruled it for hundreds of years. They invented concrete and straight roads and even bikinis. One thing they never discovered though was the number zero. This made writing and dating extensive histories of their exploits slightly more challenging, but the system of numbers they came up with is still in use today. For example the BBC uses Roman numerals to date their programmes.</p>
+                        <p>The Romans wrote numbers using letters - I, V, X, L, C, D, M. (notice these letters have lots of straight lines and are hence easy to hack into stone tablets).</p>
+                        <ul>
+                            <li>1  => I</li>
+                            <li>10  => X</li>
+                            <li>7  => VII</li>
+                        </ul>
+                        <p>There is no need to be able to convert numbers larger than about 3000. (The Romans themselves didn't tend to go any higher)</p>
+                        <p>Wikipedia says: Modern Roman numerals ... are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero.</p>
+                        <p>To see this in practice, consider the example of 1990.</p>
+                        <ul>
+                            <p>In Roman numerals:</p>
+                            <li>1990 is MCMXC</li>
+                            <li>1000=M</li>
+                            <li>900=CM</li>
+                            <li>90=XC</li>
+                            <li>2008 is written as MMVIII</li>
+                            <li>2000=MM
+                            <li>8=VIII</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row test">
+                    <div class="col m3">
+                        <div class="row">
+                            <h6>Test nb entre 1 et 10</h6>
+                            <table class="centered">
+                                <thead>
+                                <tr>
+                                    <th>Numeral</th>
+                                    <th>Roman</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ test1 }}</td>
+                                    <td>{{ numeral_to_roman1 }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            {% if numeral_to_roman1 == roman1 %}
+                                <p class="true waves-effect waves-light btn">TRUE</p>
+                            {% else %}
+                                <p class="false waves-effect waves-light btn">FALSE</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col m3">
+                        <div class="row">
+                            <h6>Test nb entre 1 et 100</h6>
+                            <table class="centered">
+                                <thead>
+                                <tr>
+                                    <th>Numeral</th>
+                                    <th>Roman</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ test2 }}</td>
+                                    <td>{{ numeral_to_roman2 }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            {% if numeral_to_roman2 == roman2 %}
+                                <p class="true waves-effect waves-light btn">TRUE</p>
+                            {% else %}
+                                <p class="false waves-effect waves-light btn">FALSE</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col m3">
+                        <div class="row">
+                            <h6>Test nb entre 1 et 999</h6>
+                            <table class="centered">
+                                <thead>
+                                <tr>
+                                    <th>Numeral</th>
+                                    <th>Roman</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ test3 }}</td>
+                                    <td>{{ numeral_to_roman3 }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            {% if numeral_to_roman3 == roman3 %}
+                                <p class="true waves-effect waves-light btn">TRUE</p>
+                            {% else %}
+                                <p class="false waves-effect waves-light btn">FALSE</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col m3">
+                        <div class="row">
+                            <h6>Test nb entre 1 et 9999</h6>
+                            <table class="centered">
+                                <thead>
+                                <tr>
+                                    <th>Numeral</th>
+                                    <th>Roman</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ test4 }}</td>
+                                    <td>{{ numeral_to_roman4 }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            {% if numeral_to_roman4 == roman4 %}
+                                <p class="true waves-effect waves-light btn">TRUE</p>
+                            {% else %}
+                                <p class="false waves-effect waves-light btn">FALSE</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="button_homepage">
+                <a href="{{ path('exam_final_homepage') }}" class="waves-effect waves-light btn">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

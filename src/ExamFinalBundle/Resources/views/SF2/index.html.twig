@@ -1,0 +1,63 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="container sf2">
+        <div class="row ennonce">
+            <h1>Symfony / MVC / Intégration</h1>
+            <p>Objectif: Tous les attraper !!</p>
+            <p>Créer une mini-application permettant de gérer notre chasse au Pokémon</p>
+            <p>Chaque fonctionnalité doit être fonctionnelle et visuellement propre.</p>
+            <p>Grâce à cette application, nous pourrons par priorité:</p>
+            <h6>Première étape</h6>
+            <ol>
+                <li>
+                    <p>Ajouter des Pokémon en précisant les caractéristiques suivantes:</p>
+                    <ul>
+                        <li>Le nom</li>
+                        <li>Une photo</li>
+                        <li>Date de prise (renseignée automatiquement)</li>
+                        <li>Sa catégorie, sachant que plusieurs Pokémon peuvent faire partie d'une même catégorie</li>
+                        <li>Point de vie</li>
+                        <li>Point de combat</li>
+                        <li>Expérience</li>
+                    </ul>
+                </li>
+                <li>Visualiser un seul Pokémon et pouvoir y ajouter un commentaire</li>
+                <li>Modifier un Pokémon</li>
+                <li>Visualiser tous les Pokémon </li>
+                <li>Ajouter un nouveau Pokémon directement depuis la page permettant de visualiser tous les Pokémon</li>
+            </ol>
+            <h6>Deuxième étape:</h6>
+            <ol>
+                <li>
+                    <p>Créer une fonctionnalité permettant de faire combattre deux Pokémon entre eux</p>
+                    <ul>
+                        <li>Créer une vue permettant de sélectionner deux Pokémon avec un bouton pour lancer le combat</li>
+                        <li>10 points de combat font perdre un point de vie à l'adversaire</li>
+                        <li>Chaque point d'expérience multiplie par 1,1 les points de combat</li>
+                        <li>Un Pokémon perd dès que ses points de vie sont à 0 </li>
+                    </ul>
+                </li>
+                <li>Lister les combats effectués ainsi que les résultats classés par date</li>
+            </ol>
+            <h6>Troisième étape</h6>
+            <ol>
+                <li>
+                    <p>Ajouter le lieu de capture aux caractéristiques du Pokemon</p>
+                </li>
+            </ol>
+        </div>
+        <div class="instruction row">
+            <p>Crée un nouveau bundle nommé "PokemonBundle"</p>
+            <p>Pour la suite je te laisse faire</p>
+            <p>Bon courage</p>
+        </div>
+        <div class="row">
+            <div class="col m12 button_homepage">
+                <a href="{{ path('exam_final_homepage') }}" class="waves-effect waves-light btn">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
